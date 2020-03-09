@@ -7,6 +7,7 @@
 
 import logging
 import pymongo
+from scrapy.exceptions import DropItem
 
 
 class RightmovePipeline(object):
@@ -37,6 +38,17 @@ class RightmovePipeline(object):
 
     def process_item(self, item, spider):
         ## how to handle each post
+        item['id'] = ''.join(i for i in item['id'] if i.isdigit())
+        item['address'] = " ".join(item['address'].split())
+        item['price'] = item['price'].strip()
+        if item['price'][-2:] == 'pw':
+            value = ''.join(i for i in item['price'] if i.isdigit())
+            item['price'] = round((int(value) * 52) / 12, 2)
+        elif item['price'][-3:] == 'pcm':
+            value = ''.join(i for i in item['price'] if i.isdigit())
+            item['price'] = int(value)
+        item['nearest_stations'] = list(set(item['nearest_stations']))
+        item['long_description'] = item['long_description'].strip()
         self.db[self.collection_name].insert(dict(item))
         logging.debug("Post added to MongoDB")
         return item

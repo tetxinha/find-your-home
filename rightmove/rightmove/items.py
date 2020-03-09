@@ -10,6 +10,7 @@ from scrapy.item import Item, Field
 
 class RightmoveItem(Item):
     # define the fields for your item here like:
+    id = Field()
     date = Field()
     title = Field()
     address = Field()
