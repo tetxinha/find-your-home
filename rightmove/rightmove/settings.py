@@ -1,3 +1,5 @@
+import os
+
 # -*- coding: utf-8 -*-
 
 # Scrapy settings for rightmove project
@@ -65,10 +67,12 @@ RANDOMIZE_DOWNLOAD_DELAY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
+USER_MONGODB = os.environ.get("USER_MONGODB")
+SECRET_KEY_MONGODB = os.environ.get("SECRET_KEY_MONGODB")
 ITEM_PIPELINES = {
     'rightmove.pipelines.RightmovePipeline': 300,
 }
-MONGO_URI = 'mongodb+srv://ritaplfigueiredo:NunoGomes2121@cluster0-bsvmm.mongodb.net/test'
+MONGO_URI = 'mongodb+srv://{}:{}@cluster0-bsvmm.mongodb.net/test'.format(USER_MONGODB, SECRET_KEY_MONGODB)
 MONGO_DATABASE = 'homes_desc'
 
 
