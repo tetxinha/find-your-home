@@ -7,19 +7,17 @@ from selenium.common.exceptions import TimeoutException
 import time
 
 DELAY = 15  # seconds
-# neighbourhoods = []
-#
-# f = open('rightmove/data/london-areas.txt')
-# neighbourhood = f.readline()
-# neighbourhoods.append(neighbourhood.strip())
-# while neighbourhood:
-#     neighbourhood = f.readline()
-#     neighbourhoods.append(neighbourhood.strip())
-# f.close()
-#
-# neighbourhoods.remove('')
+neighbourhoods = []
 
-neighbourhoods = ['Brixton', 'Greenwich, South East London']
+f = open('rightmove/data/london-areas.txt')
+neighbourhood = f.readline()
+neighbourhoods.append(neighbourhood.strip())
+while neighbourhood:
+    neighbourhood = f.readline()
+    neighbourhoods.append(neighbourhood.strip())
+f.close()
+
+neighbourhoods.remove('')
 
 class WebLinks:
     def __init__(self):
@@ -45,7 +43,7 @@ class WebLinks:
                 select_min_bedrooms = Select(driver.find_element_by_id('minBedrooms'))
                 select_min_bedrooms.select_by_value('0')
                 select_max_bedrooms = Select(driver.find_element_by_id('maxBedrooms'))
-                select_max_bedrooms.select_by_value('1')
+                select_max_bedrooms.select_by_value('2')
                 select_added_to_site = Select(driver.find_element_by_id('maxDaysSinceAdded'))
                 select_added_to_site.select_by_value('1')
                 rent = driver.find_element_by_id('submit')
