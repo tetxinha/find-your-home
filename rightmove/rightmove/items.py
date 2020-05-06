@@ -20,8 +20,6 @@ class RightmoveItem(Item):
     area = Field()
     borough = Field()
     zone = Field()
-    coordinates = Field()
-    time_to_center = Field()
     furnished = Field()
     balcony = Field()
     garden = Field()

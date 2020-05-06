@@ -13,7 +13,6 @@ Herne Hill
 Hampstead
 Islington, North London
 Clapham, South West London
-Wandsworth
 Bethnal Green
 Crystal Palace
 Camden
@@ -23,3 +22,51 @@ Brixton
 Peckham
 Leyton
 Greenwich, South East London
+Battersea
+Highbury
+Teddington
+Mayfair
+Pimlico
+Elephant and Castle
+Holland Park
+Earls Court
+Kings Cross
+Paddington
+Shoreditch
+Hoxton
+Holborn
+Kilburn
+Clapton
+Stockwell
+Stratford
+Cricklewood
+St Johns Wood
+Bow
+Wandsworth
+Camberwell
+Shepherds Bush
+Stoke Newington
+Queens Park
+Kentish Town
+Whitechapel
+Vauxhall
+Dalston
+Finsbury Park
+Leytonstone
+West Norwood
+Tooting
+Tottenham
+Golders Green
+East Ham
+Forest Hill
+Muswell hill
+Southfields
+Highgate
+Balham
+Northfields
+Ealing
+Acton
+Walthamstow
+Woolwich
+Kew
+Forest Gate

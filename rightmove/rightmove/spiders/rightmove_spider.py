@@ -24,8 +24,6 @@ class HomesSpider(scrapy.Spider):
         item['area'] = home.xpath('//ul[@class="list-bdr-b"]/li/a/text()').extract()
         item['borough'] = home.xpath('//ul[@class="list-bdr-b"]/li/a/text()').extract()
         item['zone'] = home.xpath('//ul[@class="list-bdr-b"]/li/a/text()').extract()
-        item['coordinates'] = ''
-        item['time_to_center'] = 0
         item['furnished'] = home.xpath('//table[@class="table-reset width-100"]/tbody/tr/td[@id="furnishedType"]/text()'
                                        ).extract_first()
         item['balcony'] = home.xpath('//ul[@class="list-two-col list-style-square"]/li/text()').extract()  # key_features
